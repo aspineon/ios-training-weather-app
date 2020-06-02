@@ -1,0 +1,33 @@
+//
+//  ForecastViewModel.swift
+//  Good Weather
+//
+//  Created by Łukasz Andrzejewski on 02/06/2020.
+//  Copyright © 2020 Inbright Łukasz Andrzejewski. All rights reserved.
+//
+
+import Foundation
+
+struct ForecastViewModel {
+    
+    let icon: String
+    let description: String
+    let temperature: String
+    let pressure: String
+    let date: String
+    
+}
+
+extension ForecastViewModel {
+    
+    init(_ forecast: Forecast) {
+        let iconMapper = IconMapper()
+        let forecastDescription = forecast.description.first
+        description = forecastDescription?.text ?? "" // to co jest po ?? jest wartością domyślną gdyby opis był nil
+        temperature = "\(forecast.temperature.day)°"
+        pressure = "\(forecast.pressure) hPa"
+        icon = iconMapper.map(icon: forecastDescription?.icon ?? "")
+        date = ""
+    }
+    
+}

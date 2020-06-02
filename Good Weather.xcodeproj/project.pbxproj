@@ -21,6 +21,10 @@
 		807A67422485282B008CDE64 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A67412485282B008CDE64 /* Weather.swift */; };
 		807A674424852CEC008CDE64 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674324852CEC008CDE64 /* WeatherService.swift */; };
 		807A674624852E80008CDE64 /* FakeWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674524852E80008CDE64 /* FakeWeatherService.swift */; };
+		807A67492486375D008CDE64 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A67482486375D008CDE64 /* ForecastViewModel.swift */; };
+		807A674B24863DDD008CDE64 /* IconMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674A24863DDD008CDE64 /* IconMapper.swift */; };
+		807A674D248643E3008CDE64 /* URLSessionWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */; };
+		807A674F24864B54008CDE64 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674E24864B54008CDE64 /* Debounce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		807A67412485282B008CDE64 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		807A674324852CEC008CDE64 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		807A674524852E80008CDE64 /* FakeWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherService.swift; sourceTree = "<group>"; };
+		807A67482486375D008CDE64 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		807A674A24863DDD008CDE64 /* IconMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMapper.swift; sourceTree = "<group>"; };
+		807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWeatherService.swift; sourceTree = "<group>"; };
+		807A674E24864B54008CDE64 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +102,12 @@
 		807A673724850D6B008CDE64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				807A674E24864B54008CDE64 /* Debounce.swift */,
+				807A674A24863DDD008CDE64 /* IconMapper.swift */,
 				807A672B2484EDC1008CDE64 /* LaunchScreen.storyboard */,
 				807A67262484EDBE008CDE64 /* Main.storyboard */,
 				807A67242484EDBE008CDE64 /* WeatherViewController.swift */,
+				807A67482486375D008CDE64 /* ForecastViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 				807A67412485282B008CDE64 /* Weather.swift */,
 				807A674324852CEC008CDE64 /* WeatherService.swift */,
 				807A674524852E80008CDE64 /* FakeWeatherService.swift */,
+				807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,8 +203,12 @@
 				807A674424852CEC008CDE64 /* WeatherService.swift in Sources */,
 				807A67252484EDBE008CDE64 /* WeatherViewController.swift in Sources */,
 				807A674624852E80008CDE64 /* FakeWeatherService.swift in Sources */,
+				807A674D248643E3008CDE64 /* URLSessionWeatherService.swift in Sources */,
 				807A67212484EDBE008CDE64 /* AppDelegate.swift in Sources */,
+				807A674F24864B54008CDE64 /* Debounce.swift in Sources */,
+				807A674B24863DDD008CDE64 /* IconMapper.swift in Sources */,
 				807A673C24852556008CDE64 /* Description.swift in Sources */,
+				807A67492486375D008CDE64 /* ForecastViewModel.swift in Sources */,
 				807A673A24852336008CDE64 /* City.swift in Sources */,
 				807A673E24852677008CDE64 /* Forecast.swift in Sources */,
 				807A6740248526DE008CDE64 /* Temperature.swift in Sources */,

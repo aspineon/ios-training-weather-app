@@ -9,17 +9,19 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     
-    let weatherService: WeatherService = FakeWeatherService()
+    let weatherService: WeatherService = URLSessionWeatherService()
+    
+    var lastCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionLabel.text = "Loading..."
+        updateView(ForecastViewModel(icon: "", description: "Loading...", temperature: "", pressure: "", date: ""))
         weatherService.getWeather(forCity: "warsaw", onComplete: updateWeather(weather:))
     }
     
@@ -27,13 +29,33 @@ class WeatherViewController: UIViewController {
         guard let forecast = weather?.forecast.first else {
             return
         }
-        descriptionLabel.text = forecast.description.first?.text
-        temperatureLabel.text = "\(forecast.temperature)"
-        pressureLabel.text = "\(forecast.pressure)"
+        updateView(ForecastViewModel(forecast))
     }
-
-    @IBAction func onShowDetails(_ sender: UIButton) {
-        print("Test")
+    
+    func updateView(_ forecastViewModel: ForecastViewModel) {
+        iconLabel.text = forecastViewModel.icon
+        descriptionLabel.text = forecastViewModel.description
+        temperatureLabel.text = forecastViewModel.temperature
+        pressureLabel.text = forecastViewModel.pressure
+    }
+    
+    @IBAction func onCityChanged(_ sender: UITextField) {
+        /* if let city = sender.text {
+         weatherService.getWeather(forCity: city, onComplete: { weather in
+         self.view.endEditing(true)
+         self.updateWeather(weather: weather)
+         })
+         } */
+        
+        if let city = sender.text {
+            debounce(input: city, comparedAgainst: self.lastCity) { _ in
+                self.weatherService.getWeather(forCity: city) { weather in
+                    self.view.endEditing(true)
+                    self.updateWeather(weather: weather)
+                }
+            }
+            lastCity = city
+        }
     }
     
 }
