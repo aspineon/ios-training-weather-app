@@ -26,7 +26,7 @@
 		807A674D248643E3008CDE64 /* URLSessionWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */; };
 		807A674F24864B54008CDE64 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674E24864B54008CDE64 /* Debounce.swift */; };
 		807A67512486607B008CDE64 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */; };
-		807A675324867C71008CDE64 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A675224867C71008CDE64 /* ForecastCell.swift */; };
+		807A675324867C71008CDE64 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A675224867C71008CDE64 /* ForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWeatherService.swift; sourceTree = "<group>"; };
 		807A674E24864B54008CDE64 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
-		807A675224867C71008CDE64 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		807A675224867C71008CDE64 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				807A67482486375D008CDE64 /* ForecastViewModel.swift */,
 				807A67242484EDBE008CDE64 /* WeatherViewController.swift */,
 				807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */,
-				807A675224867C71008CDE64 /* ForecastCell.swift */,
+				807A675224867C71008CDE64 /* ForecastTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				807A67422485282B008CDE64 /* Weather.swift in Sources */,
 				807A674424852CEC008CDE64 /* WeatherService.swift in Sources */,
 				807A67252484EDBE008CDE64 /* WeatherViewController.swift in Sources */,
-				807A675324867C71008CDE64 /* ForecastCell.swift in Sources */,
+				807A675324867C71008CDE64 /* ForecastTableViewCell.swift in Sources */,
 				807A674624852E80008CDE64 /* FakeWeatherService.swift in Sources */,
 				807A674D248643E3008CDE64 /* URLSessionWeatherService.swift in Sources */,
 				807A67212484EDBE008CDE64 /* AppDelegate.swift in Sources */,

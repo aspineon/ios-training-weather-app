@@ -12,7 +12,7 @@ struct Forecast: Codable {
     let humidity: Int
     let description: [Description]
     let temperature: Temperature
-    let date: Int
+    let date: Double
     
     enum CodingKeys: String, CodingKey {
         

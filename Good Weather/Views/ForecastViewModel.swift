@@ -15,6 +15,11 @@ struct ForecastViewModel {
     let temperature: String
     let pressure: String
     let date: String
+    let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMMM"
+        return dateFormatter
+    }()
     
 }
 
@@ -27,7 +32,7 @@ extension ForecastViewModel {
         temperature = "\(forecast.temperature.day)°"
         pressure = "\(forecast.pressure) hPa"
         icon = iconMapper.map(icon: forecastDescription?.icon ?? "")
-        date = ""
+        date = dateFormatter.string(from: Date(timeIntervalSince1970: forecast.date))
     }
-    
+
 }

@@ -1,5 +1,5 @@
 //
-//  ForecastCell.swift
+//  ForecastTableViewCell.swift
 //  Good Weather
 //
 //  Created by Łukasz Andrzejewski on 02/06/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastCell: UITableViewCell {
+class ForecastTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

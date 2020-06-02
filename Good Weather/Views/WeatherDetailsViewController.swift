@@ -19,11 +19,12 @@ class WeatherDetailsViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell") as! ForecastTableViewCell
         if let forecast = weather?.forecast[indexPath.row] {
             let forecastViewModel = ForecastViewModel(forecast)
-            cell.textLabel?.text = forecastViewModel.description
-            cell.detailTextLabel?.text = forecastViewModel.temperature
+            //cell.textLabel?.text = forecastViewModel.description
+            //cell.detailTextLabel?.text = forecastViewModel.temperature
+            cell.update(forecastViewModel)
         }
         return cell
     }
