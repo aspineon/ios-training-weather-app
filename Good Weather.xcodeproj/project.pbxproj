@@ -25,6 +25,7 @@
 		807A674B24863DDD008CDE64 /* IconMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674A24863DDD008CDE64 /* IconMapper.swift */; };
 		807A674D248643E3008CDE64 /* URLSessionWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */; };
 		807A674F24864B54008CDE64 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674E24864B54008CDE64 /* Debounce.swift */; };
+		807A67512486607B008CDE64 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		807A674A24863DDD008CDE64 /* IconMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconMapper.swift; sourceTree = "<group>"; };
 		807A674C248643E3008CDE64 /* URLSessionWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWeatherService.swift; sourceTree = "<group>"; };
 		807A674E24864B54008CDE64 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
+		807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,9 @@
 				807A674A24863DDD008CDE64 /* IconMapper.swift */,
 				807A672B2484EDC1008CDE64 /* LaunchScreen.storyboard */,
 				807A67262484EDBE008CDE64 /* Main.storyboard */,
-				807A67242484EDBE008CDE64 /* WeatherViewController.swift */,
 				807A67482486375D008CDE64 /* ForecastViewModel.swift */,
+				807A67242484EDBE008CDE64 /* WeatherViewController.swift */,
+				807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				807A673C24852556008CDE64 /* Description.swift in Sources */,
 				807A67492486375D008CDE64 /* ForecastViewModel.swift in Sources */,
 				807A673A24852336008CDE64 /* City.swift in Sources */,
+				807A67512486607B008CDE64 /* WeatherDetailsViewController.swift in Sources */,
 				807A673E24852677008CDE64 /* Forecast.swift in Sources */,
 				807A6740248526DE008CDE64 /* Temperature.swift in Sources */,
 				807A67232484EDBE008CDE64 /* SceneDelegate.swift in Sources */,

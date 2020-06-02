@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController {
     let weatherService: WeatherService = URLSessionWeatherService()
     
     var lastCity = ""
+    var weather: Weather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class WeatherViewController: UIViewController {
         guard let forecast = weather?.forecast.first else {
             return
         }
+        self.weather = weather
         updateView(ForecastViewModel(forecast))
     }
     
@@ -45,6 +47,14 @@ class WeatherViewController: UIViewController {
             weatherService.getWeather(forCity: city) { weather in
                 self.view.endEditing(true)
                 self.updateWeather(weather: weather)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "weatherDetails" {
+            if let weatherDetailsViewController = segue.destination as? WeatherDetailsViewController {
+                weatherDetailsViewController.weather = weather
             }
         }
     }
