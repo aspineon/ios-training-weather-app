@@ -15,6 +15,7 @@ class ForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var forecastView: ForecastView!
     
     func update(_ forecastViewModel: ForecastViewModel) {
         iconLabel.text = forecastViewModel.icon
@@ -22,6 +23,7 @@ class ForecastTableViewCell: UITableViewCell {
         temperatureLabel.text = forecastViewModel.temperature
         pressureLabel.text = forecastViewModel.pressure
         dateLabel.text = forecastViewModel.date
+        forecastView.update(forecastViewModel)
     }
     
 }

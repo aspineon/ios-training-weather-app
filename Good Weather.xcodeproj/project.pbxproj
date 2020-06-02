@@ -27,6 +27,8 @@
 		807A674F24864B54008CDE64 /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A674E24864B54008CDE64 /* Debounce.swift */; };
 		807A67512486607B008CDE64 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */; };
 		807A675324867C71008CDE64 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A675224867C71008CDE64 /* ForecastTableViewCell.swift */; };
+		807A675724868926008CDE64 /* ForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807A675624868925008CDE64 /* ForecastView.xib */; };
+		807A6759248689B5008CDE64 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A6758248689B5008CDE64 /* ForecastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		807A674E24864B54008CDE64 /* Debounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		807A675224867C71008CDE64 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		807A675624868925008CDE64 /* ForecastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastView.xib; sourceTree = "<group>"; };
+		807A6758248689B5008CDE64 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				807A67242484EDBE008CDE64 /* WeatherViewController.swift */,
 				807A67502486607B008CDE64 /* WeatherDetailsViewController.swift */,
 				807A675224867C71008CDE64 /* ForecastTableViewCell.swift */,
+				807A675624868925008CDE64 /* ForecastView.xib */,
+				807A6758248689B5008CDE64 /* ForecastView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 				807A672A2484EDC1008CDE64 /* Assets.xcassets in Resources */,
 				807A67282484EDBE008CDE64 /* Main.storyboard in Resources */,
 				807A673624850608008CDE64 /* weather.ttf in Resources */,
+				807A675724868926008CDE64 /* ForecastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				807A67422485282B008CDE64 /* Weather.swift in Sources */,
+				807A6759248689B5008CDE64 /* ForecastView.swift in Sources */,
 				807A674424852CEC008CDE64 /* WeatherService.swift in Sources */,
 				807A67252484EDBE008CDE64 /* WeatherViewController.swift in Sources */,
 				807A675324867C71008CDE64 /* ForecastTableViewCell.swift in Sources */,
