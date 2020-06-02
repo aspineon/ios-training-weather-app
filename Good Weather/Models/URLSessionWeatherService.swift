@@ -10,18 +10,18 @@ import Foundation
 
 class URLSessionWeatherService: WeatherService {
     
-    private let apiUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8&q="
+    private let baseUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?cnt=7&units=metric&APPID=b933866e6489f58987b2898c89f542b8&q="
    
     func getWeather(forCity city: String, onComplete handler: @escaping (Weather?) -> Void) {
-        guard let url = URL(string: "\(apiUrl)\(city)") else {
+        guard let requestUrl = URL(string: "\(baseUrl)\(city)") else {
             return
         }
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: requestUrl)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let jsonData = data {
-                let result = try? JSONDecoder().decode(Weather.self, from: jsonData)
+                let weather = try? JSONDecoder().decode(Weather.self, from: jsonData)
                 DispatchQueue.main.async {
-                    handler(result)
+                    handler(weather)
                 }
             }
         }.resume()

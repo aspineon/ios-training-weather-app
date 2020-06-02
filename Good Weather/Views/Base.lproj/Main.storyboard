@@ -21,13 +21,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXQ-UV-88N">
-                                <rect key="frame" x="112.5" y="398" width="189.5" height="100.5"/>
-                                <fontDescription key="fontDescription" name="Flaticon" family="Flaticon" pointSize="100"/>
+                                <rect key="frame" x="65" y="373" width="284" height="150.5"/>
+                                <fontDescription key="fontDescription" name="Flaticon" family="Flaticon" pointSize="150"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="145" translatesAutoresizingMaskIntoConstraints="NO" id="VNw-Ob-5dr">
-                                <rect key="frame" x="20" y="828" width="374" height="24"/>
+                                <rect key="frame" x="20" y="818" width="374" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11v-0Q-Pf9">
                                         <rect key="frame" x="0.0" y="0.0" width="153.5" height="24"/>
@@ -44,41 +44,43 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UF0-ne-dEo">
-                                <rect key="frame" x="157" y="508.5" width="100" height="24"/>
+                                <rect key="frame" x="157" y="533.5" width="100" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eby-wG-eRV">
-                                <rect key="frame" x="163" y="224" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Warsaw" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-N6-J5I">
-                                <rect key="frame" x="10" y="54" width="394" height="25.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Warsaw" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-N6-J5I">
+                                <rect key="frame" x="10" y="56.5" width="344" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                                <connections>
-                                    <action selector="onCityChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="s7N-oT-B62"/>
-                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsy-hw-3rk">
+                                <rect key="frame" x="364" y="54" width="30" height="30"/>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="onCityEntered:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qPh-DK-bNE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="VNw-Ob-5dr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6un-e2-Y9L"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VNw-Ob-5dr" secondAttribute="trailing" constant="20" id="Qt4-kz-juH"/>
-                            <constraint firstItem="EXQ-UV-88N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dbk-sv-BkD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wuD-N6-J5I" secondAttribute="trailing" constant="10" id="fsf-GS-HJb"/>
-                            <constraint firstItem="UF0-ne-dEo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kJr-gi-Sgh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VNw-Ob-5dr" secondAttribute="bottom" constant="10" id="kZY-m7-Ngh"/>
-                            <constraint firstItem="wuD-N6-J5I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mQH-60-lD5"/>
-                            <constraint firstItem="wuD-N6-J5I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ueu-5r-Z7n"/>
-                            <constraint firstItem="EXQ-UV-88N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uin-fQ-wKE"/>
-                            <constraint firstItem="UF0-ne-dEo" firstAttribute="top" secondItem="EXQ-UV-88N" secondAttribute="bottom" constant="10" id="vGn-Lh-zPq"/>
+                            <constraint firstItem="VNw-Ob-5dr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8d4-ss-kG3"/>
+                            <constraint firstItem="Fsy-hw-3rk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="BKT-l5-MMO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VNw-Ob-5dr" secondAttribute="bottom" constant="20" id="K8M-VI-uHF"/>
+                            <constraint firstItem="EXQ-UV-88N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RgR-xf-C6G"/>
+                            <constraint firstItem="UF0-ne-dEo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Urt-aQ-Uon"/>
+                            <constraint firstItem="Fsy-hw-3rk" firstAttribute="leading" secondItem="wuD-N6-J5I" secondAttribute="trailing" constant="10" id="az7-Py-fKm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fsy-hw-3rk" secondAttribute="trailing" constant="20" id="ps6-8S-CET"/>
+                            <constraint firstItem="Fsy-hw-3rk" firstAttribute="centerY" secondItem="wuD-N6-J5I" secondAttribute="centerY" id="qdZ-4O-Ayl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VNw-Ob-5dr" secondAttribute="trailing" constant="20" id="tce-6Q-bfF"/>
+                            <constraint firstItem="wuD-N6-J5I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vQL-x3-24L"/>
+                            <constraint firstItem="UF0-ne-dEo" firstAttribute="top" secondItem="EXQ-UV-88N" secondAttribute="bottom" constant="10" id="x6t-P2-atR"/>
+                            <constraint firstItem="EXQ-UV-88N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xa6-FH-mX4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cityTextField" destination="wuD-N6-J5I" id="1LR-7z-YF3"/>
                         <outlet property="descriptionLabel" destination="UF0-ne-dEo" id="6KB-XR-6fb"/>
                         <outlet property="iconLabel" destination="EXQ-UV-88N" id="HSd-dh-gDi"/>
                         <outlet property="pressureLabel" destination="xMt-zu-RvY" id="opw-wu-tNZ"/>
@@ -87,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="123"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="122.54464285714285"/>
         </scene>
     </scenes>
 </document>

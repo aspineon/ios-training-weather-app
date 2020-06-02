@@ -23,7 +23,7 @@ extension ForecastViewModel {
     init(_ forecast: Forecast) {
         let iconMapper = IconMapper()
         let forecastDescription = forecast.description.first
-        description = forecastDescription?.text ?? "" // to co jest po ?? jest wartością domyślną gdyby opis był nil
+        description = forecastDescription?.text ?? ""
         temperature = "\(forecast.temperature.day)°"
         pressure = "\(forecast.pressure) hPa"
         icon = iconMapper.map(icon: forecastDescription?.icon ?? "")

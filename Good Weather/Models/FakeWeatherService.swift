@@ -16,8 +16,8 @@ class FakeWeatherService: WeatherService {
     .data(using: .utf8)!
     
     func getWeather(forCity city: String, onComplete handler: @escaping (Weather?) -> Void) {
-        let result = try? JSONDecoder().decode(Weather.self, from: jsonData)
-        handler(result)
+        let weather = try? JSONDecoder().decode(Weather.self, from: jsonData)
+        handler(weather)
     }
     
 }

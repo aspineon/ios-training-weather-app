@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var cityTextField: UITextField!
     
     let weatherService: WeatherService = URLSessionWeatherService()
     
@@ -39,14 +40,16 @@ class WeatherViewController: UIViewController {
         pressureLabel.text = forecastViewModel.pressure
     }
     
+    @IBAction func onCityEntered(_ sender: UIButton) {
+        if let city = cityTextField.text {
+            weatherService.getWeather(forCity: city) { weather in
+                self.view.endEditing(true)
+                self.updateWeather(weather: weather)
+            }
+        }
+    }
+    
     @IBAction func onCityChanged(_ sender: UITextField) {
-        /* if let city = sender.text {
-         weatherService.getWeather(forCity: city, onComplete: { weather in
-         self.view.endEditing(true)
-         self.updateWeather(weather: weather)
-         })
-         } */
-        
         if let city = sender.text {
             debounce(input: city, comparedAgainst: self.lastCity) { _ in
                 self.weatherService.getWeather(forCity: city) { weather in
