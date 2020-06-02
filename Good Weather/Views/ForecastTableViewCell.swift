@@ -11,7 +11,6 @@ import UIKit
 class ForecastTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -19,7 +18,6 @@ class ForecastTableViewCell: UITableViewCell {
     
     func update(_ forecastViewModel: ForecastViewModel) {
         iconLabel.text = forecastViewModel.icon
-        descriptionLabel.text = forecastViewModel.description
         temperatureLabel.text = forecastViewModel.temperature
         pressureLabel.text = forecastViewModel.pressure
         dateLabel.text = forecastViewModel.date
