@@ -1,5 +1,5 @@
 //
-//  ForecastView.swift
+//  DescriptionView.swift
 //  Good Weather
 //
 //  Created by Łukasz Andrzejewski on 02/06/2020.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class ForecastView: UIView {
+class DescriptionView: UIView {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -24,15 +24,15 @@ class ForecastView: UIView {
     }
     
     func loadView() {
-        let bundle = Bundle(for: ForecastView.self)
-        let nib = UINib(nibName: "ForecastView", bundle: bundle)
+        let bundle = Bundle(for: DescriptionView.self)
+        let nib = UINib(nibName: "DescriptionView", bundle: bundle)
         let view = nib.instantiate(withOwner: self).first as! UIView
         view.frame = bounds
         addSubview(view)
     }
     
-    func update(_ forecastViewModel: ForecastViewModel) {
-        descriptionLabel.text = forecastViewModel.description
+    func update(_ text: String) {
+        descriptionLabel.text = text
     }
     
 }

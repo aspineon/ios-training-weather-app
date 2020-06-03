@@ -14,14 +14,14 @@ class ForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var forecastView: ForecastView!
+    @IBOutlet weak var descriptionView: DescriptionView!
     
     func update(_ forecastViewModel: ForecastViewModel) {
         iconLabel.text = forecastViewModel.icon
         temperatureLabel.text = forecastViewModel.temperature
         pressureLabel.text = forecastViewModel.pressure
         dateLabel.text = forecastViewModel.date
-        forecastView.update(forecastViewModel)
+        descriptionView.update(forecastViewModel.description)
     }
     
 }

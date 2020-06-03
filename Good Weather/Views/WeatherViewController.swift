@@ -17,37 +17,22 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     
     let weatherService: WeatherService = URLSessionWeatherService()
+    let cityKey = "city"
     
-    var lastCity = ""
     var weather: Weather?
+    //var lastCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView(ForecastViewModel(icon: "", description: "Loading...", temperature: "", pressure: "", date: ""))
-        weatherService.getWeather(forCity: "warsaw", onComplete: updateWeather(weather:))
-    }
-    
-    func updateWeather(weather: Weather?) {
-        guard let forecast = weather?.forecast.first else {
-            return
-        }
-        self.weather = weather
-        updateView(ForecastViewModel(forecast))
-    }
-    
-    func updateView(_ forecastViewModel: ForecastViewModel) {
-        iconLabel.text = forecastViewModel.icon
-        descriptionLabel.text = forecastViewModel.description
-        temperatureLabel.text = forecastViewModel.temperature
-        pressureLabel.text = forecastViewModel.pressure
+        let city = UserDefaults.standard.string(forKey: cityKey) ?? "warsaw"
+        cityTextField.text = city
+        refreshWeather(for: city)
     }
     
     @IBAction func onCityEntered(_ sender: UIButton) {
         if let city = cityTextField.text {
-            weatherService.getWeather(forCity: city) { weather in
-                self.view.endEditing(true)
-                self.updateWeather(weather: weather)
-            }
+            refreshWeather(for: city)
         }
     }
     
@@ -59,16 +44,38 @@ class WeatherViewController: UIViewController {
         }
     }
     
+    private func refreshWeather(for city: String) {
+        weatherService.getWeather(for: city) { weather in
+            self.view.endEditing(true)
+            self.on(weather: weather)
+            UserDefaults.standard.set(city, forKey: self.cityKey)
+        }
+    }
+    
+    private func on(weather: Weather?) {
+        guard let forecast = weather?.forecast.first else {
+            return
+        }
+        self.weather = weather
+        updateView(ForecastViewModel(forecast))
+    }
+    
+    private func updateView(_ forecastViewModel: ForecastViewModel) {
+        iconLabel.text = forecastViewModel.icon
+        descriptionLabel.text = forecastViewModel.description
+        temperatureLabel.text = forecastViewModel.temperature
+        pressureLabel.text = forecastViewModel.pressure
+    }
+    
+    /*
     @IBAction func onCityChanged(_ sender: UITextField) {
         if let city = sender.text {
             debounce(input: city, comparedAgainst: self.lastCity) { _ in
-                self.weatherService.getWeather(forCity: city) { weather in
-                    self.view.endEditing(true)
-                    self.updateWeather(weather: weather)
-                }
+                self.refreshWeather(for: city)
             }
             lastCity = city
         }
     }
+    */
     
 }

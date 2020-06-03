@@ -8,6 +8,6 @@
 
 protocol WeatherService {
     
-    func getWeather(forCity city: String, onComplete handler: @escaping (Weather?) -> Void)
+    func getWeather(for city: String, callback: @escaping (Weather?) -> Void)
     
 }
